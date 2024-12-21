@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Student Form</h2>
+        <form id="studentForm">
+            <input type="text" id="name" placeholder="Enter Name" required><br>
+            <input type="text" id="rollNo" placeholder="Enter Roll No" required><br>
+            <input type="email" id="email" placeholder="Enter Email ID" required><br>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to handle form submission
+        function submitForm() {
+            // Get values from form inputs
+            const name = document.getElementById('name').value;
+            const rollNo = document.getElementById('rollNo').value;
+            const email = document.getElementById('email').value;
+
+            // Check if all fields are filled
+            if (name && rollNo && email) {
+                // Store the data (in this case, just show it in an alert)
+                alert("Form Submitted Successfully! \nName: " + name + "\nRoll No: " + rollNo + "\nEmail: " + email);
+                
+                // Optionally, you can clear the form after submission
+                document.getElementById('studentForm').reset();
+            } else {
+                // Show an alert if any field is missing
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+
+</body>
+</html>
